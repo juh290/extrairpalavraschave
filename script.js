@@ -28,5 +28,29 @@ function processaTexto(texto) {
         return frequencias[p2] - frequencias[p2];
     }
 
+    return ordenadas.slice(0,10);
     
+}
+
+function contaFrequencia(palavras) {
+    let frequencias = {};
+    for (let i of palavras) {
+        frequencias[i]=0;
+        for (let j of palavras) {
+            if (i == j) {
+                frequencias[i] ++;
+            }
+        }
+    }
+    return frequencias;
+}
+
+function tiraPalavrasRuins(palavras) {
+    const palavrasBoas = [];
+    for (let palavras of palavras) {
+        if(!PALAVRAS_RUINS.has(palavras) &&palavras.length >2) { 
+            palavrasBoas.push(palavra);
+        }
+    }
+    return palavrasBoas;
 }
